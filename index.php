@@ -1,7 +1,7 @@
 <?php
 
-ini_set('display_errors', 1); // Afficher les erreurs à l'écran
-error_reporting(E_ALL); // Afficher les erreurs et les avertissements
+// ini_set('display_errors', 1); // Afficher les erreurs à l'écran
+// error_reporting(E_ALL); // Afficher les erreurs et les avertissements
 
 // Insertion des classes PHP
 require 'vendor/autoload.php';
