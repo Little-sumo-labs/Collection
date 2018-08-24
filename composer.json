@@ -1,0 +1,25 @@
+{
+    "name": "little-sumo-labs/collection",
+    "description": "Classe PHP facilitant la Manipulation des tableaux PHP avec la POO",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guillaume RICHARD",
+            "email": "contact@guillaume-richard.fr",
+            "homepage": "https://guillaume-richard.fr/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "contact@guillaume-richard.fr",
+        "source": "https://github.com/Little-sumo-labs/Collection",
+        "docs": "https://github.com/Little-sumo-labs/Le-poids-des-chiffres/blob/master/README.md",
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "require": {}
+}
