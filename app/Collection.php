@@ -29,44 +29,12 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
     }
 
     /**
-     * Récupère les valeurs '$value' d'une suite de clé '$indexes'
-     *
-     * @param array $indexes
-     * @param $value
-     * @return null|Collection
-     */
-    public function getValue(array $indexes, $value) {
-        $key = array_shift($indexes);
-        if(empty($indexes)) {
-            if(!array_key_exists($key, $value)){
-                return null;
-            }
-            if(is_array($value[$key])) {
-                return new Collection($value[$key]);
-            } else {
-                return $value[$key];
-            }
-        } else {
-            return $this->getValue($indexes, $value[$key]);
-        }
-    }
-
-    /**
      * injecte une valeur '$value' à la clé '$key' mis en paramètre
      * @param $key
      * @param $value
      */
     public function set($key, $value) {
         $this->items[$key] = $value;
-    }
-
-    /**
-     * Retourne si la clé existe.
-     * @param $key
-     * @return bool
-     */
-    public function has($key) {
-        return array_key_exists($key, $this->items);
     }
 
     /**
@@ -97,7 +65,9 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
     }
 
     /**
-     * Liste séparé par un caractère spécifique
+     * Création d'une liste séparé par un caractère spécifique
+     * Semblable à la fonction implode.
+     *
      * @param $glue - représente le caractère
      * @return string
      */
@@ -119,7 +89,6 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
         }
     }
 
-
     /**
      * Retourne la valeur minimale d'une clé donné
      *
@@ -135,21 +104,37 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
     }
 
     /**
-     * @param $column
-     * @param int $direction
+     * Retourne si la clé existe.
+     * @param $key
      * @return bool
      */
-    public function sortByColumn($column, $direction = SORT_ASC) {
-        $reference_array = [];
-
-        foreach($this->items as $key => $row) {
-            $reference_array[$key] = $row[$column];
-        }
-
-        var_dump(array_multisort($reference_array, $direction, $this->items));
-
-        return array_multisort($reference_array, $direction, $this->items);
+    private function has($key) {
+        return array_key_exists($key, $this->items);
     }
+
+    /**
+     * Récupère les valeurs '$value' d'une suite de clé '$indexes'
+
+     * @param array $indexes
+     * @param $value
+     * @return null|Collection
+     */
+    private function getValue(array $indexes, $value) {
+        $key = array_shift($indexes);
+        if(empty($indexes)) {
+            if(!array_key_exists($key, $value)){
+                return null;
+            }
+            if(is_array($value[$key])) {
+                return new Collection($value[$key]);
+            } else {
+                return $value[$key];
+            }
+        } else {
+            return $this->getValue($indexes, $value[$key]);
+        }
+    }
+
 
     /**
      * (PHP 5 &gt;= 5.0.0)<br/>
