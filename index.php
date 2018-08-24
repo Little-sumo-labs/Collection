@@ -16,6 +16,12 @@ $notes = [
 
 $collection = new collection($notes);
 var_dump(
+    $collection->get('0.name'),
+    $collection->get('1')->get('name'),
+    $collection->get('2.azename')
+);
+
+var_dump(
     $collection->lists('name', 'note'),
     $collection->extract('note')
 );
@@ -32,10 +38,4 @@ var_dump(
 var_dump(
     $collection->extract('note')->min(),
     $collection->min('note')
-);
-
-var_dump(
-    $collection->get('0.name'),
-    $collection->get('1')->get('azename'),
-    $collection->get('2.name')
 );
