@@ -3,10 +3,7 @@ Collection
 
 ## Installation
 ### Cloning with composer
-Create or update your composer.json and run `composer update`
-```bash
-$ composer require little-sumo-labs/Collection
-```
+Not Available yet.
 
 ### By download in Composer 
 Just [download this repository](https://github.com/Little-sumo-labs/Collection/archive/master.zip) in a specific folder.
