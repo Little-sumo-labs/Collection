@@ -14,7 +14,7 @@
     "support": {
         "email": "contact@guillaume-richard.fr",
         "source": "https://github.com/Little-sumo-labs/Collection",
-        "docs": "https://github.com/Little-sumo-labs/Le-poids-des-chiffres/blob/master/README.md",
+        "docs": "https://github.com/Little-sumo-labs/Le-poids-des-chiffres/blob/master/README.md"
     },
     "autoload": {
         "psr-4": {

@@ -5,7 +5,7 @@ Collection
 ### Cloning with composer
 Create or update your composer.json and run `composer update`
 ```bash
-$ composer require little-sumo-labs/FrontMatter
+$ composer require little-sumo-labs/Collection
 ```
 
 ### By download in Composer 
