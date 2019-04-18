@@ -99,8 +99,58 @@ show info :
 '13'
 ```
 
+#### Example 5 : functions orderBy()
+- Sorts a collection of arrays or objects by key.
+```php
+var_dump(
+    $collection->orderBy('name', 'asc')->items
+);
+```
+show info :
+```php
+array (size=3)
+  0 => 
+    array (size=3)
+      'name' => string 'Emilie' (length=6)
+      'note' => int 15
+      'nickname' => string 'test3' (length=5)
+  1 => 
+    array (size=3)
+      'name' => string 'Jean' (length=4)
+      'note' => int 20
+      'nickname' => string 'test' (length=4)
+  2 => 
+    array (size=3)
+      'name' => string 'Marc' (length=4)
+      'note' => int 13
+      'nickname' => string 'test2' (length=5)
+```
+
+#### Example 6 : functions take()
+- Returns an array with n elements removed from the beginning.
+```php
+var_dump(
+    $collection->take(2)
+);
+```
+show info :
+```php
+array (size=2)
+  0 => 
+    array (size=3)
+      'name' => string 'Jean' (length=4)
+      'note' => int 20
+      'nickname' => string 'test' (length=4)
+  1 => 
+    array (size=3)
+      'name' => string 'Marc' (length=4)
+      'note' => int 13
+      'nickname' => string 'test2' (length=5)
+```
+
 ## Documentation & Useful links
 * [Tutoriel Vidéo PHP - Manipuler les tableaux en utilisant la POO](https://www.grafikart.fr/tutoriels/php/poo-collection-php-523)
+* [ A curated collection of useful PHP snippets that you can understand in 30 seconds or less.](https://github.com/appzcoder/30-seconds-of-php-code)
 
 ## Contributing
-Si vous avez des idées de développements, ou de correction, envoyez-moi un message sur le mail que vous pouvez retrouver dans le composer.json 
+If you have ideas for developments, or correction, send me a message. You can find my email in composer.json 

@@ -39,3 +39,11 @@ var_dump(
     $collection->extract('note')->min(),
     $collection->min('note')
 );
+
+var_dump(
+    $collection->orderBy('name', 'asc')->items
+);
+
+var_dump(
+    $collection->take(2)
+);

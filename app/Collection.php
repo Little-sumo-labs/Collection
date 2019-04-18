@@ -104,6 +104,38 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
     }
 
     /**
+     * Sorts a collection of arrays or objects by key.
+     * @param string $attr
+     * @param string $order
+     * @return Collection
+     */
+    public function orderBy($attr, $order)
+    {
+        $sortedItems = [];
+        foreach ($this->items as $item) {
+            $key = is_object($item) ? $item->{$attr} : $item[$attr];
+            $sortedItems[$key] = $item;
+        }
+        if ($order === 'desc') {
+            krsort($sortedItems);
+        } else {
+            ksort($sortedItems);
+        }
+
+        return new Collection(array_values($sortedItems));
+    }
+
+    /**
+     * Returns an array with n elements removed from the beginning.
+     * @param int $n
+     * @return array
+     */
+    public function take($n = 1)
+    {
+        return array_slice($this->items,0, $n);
+    }
+
+    /**
      * Retourne si la clé existe.
      * @param $key
      * @return bool
@@ -134,7 +166,6 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
             return $this->getValue($indexes, $value[$key]);
         }
     }
-
 
     /**
      * (PHP 5 &gt;= 5.0.0)<br/>
