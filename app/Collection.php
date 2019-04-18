@@ -7,7 +7,7 @@ namespace App;
  * @package system\libraries
  */
 class Collection implements \IteratorAggregate, \ArrayAccess {
-    private $items;
+    public $items;
 
     /**
      * Collection constructor.
@@ -76,7 +76,7 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
     }
 
     /**
-     * Retourne la valeur maximale d'une clé donné
+     * Retourne la valeur maximale d'une clé donné en paramètre
      *
      * @param bool $key
      * @return mixed
@@ -90,7 +90,7 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
     }
 
     /**
-     * Retourne la valeur minimale d'une clé donné
+     * Retourne la valeur minimale d'une clé donné en paramètre
      *
      * @param bool $key
      * @return mixed

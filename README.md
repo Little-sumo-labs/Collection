@@ -31,7 +31,9 @@ $collection = new collection($notes);
 ```
 
 ### Code usage
-Example 1
+#### Example 1 : Function get()
+- Retrieves a value from a table. If this value is non-existent, the return will be empty
+
 ```php
 var_dump(
     $collection->get('0.name'),
@@ -46,30 +48,29 @@ show info :
 ''
 ```
 
-Example 2
+#### Example 2 : functions list() and extract()
+- the lists () function will go back 2 informations from a table. The 1st info as the key of the output array, the 2nd info as the value of the output array. 
+- The function extract() returns the different values of the requested data
 ```php
 var_dump(
-    $collection->lists('name', 'note'),
-    $collection->extract('note')
+    $collection->lists('name', 'note')->items,
+    $collection->extract('note')->items
 );
 ```
 show info :
 ```php
-object(App\Collection)[2]
-  private 'items' => 
-    array (size=3)
-      'Jean' => int 20
-      'Marc' => int 13
-      'Emilie' => int 15
-object(App\Collection)[4]
-  private 'items' => 
-    array (size=3)
-      0 => int 20
-      1 => int 13
-      2 => int 15
+array (size=3)
+  'Jean' => int 20
+  'Marc' => int 13
+  'Emilie' => int 15
+array (size=3)
+  0 => int 20
+  1 => int 13
+  2 => int 15
 ```
 
-Example 3
+#### Example 3 : function join()
+- the function will return all the values of the requested data, in a single list. the values will be separated by a specific character
 ```php
 var_dump(
     $collection->extract('note')->join(', ')
@@ -80,11 +81,14 @@ show info :
 '20, 13, 15'
 ```
 
-Example 4
+#### Example 4 : functions min() et max()
+- returns respectively the min and max values ​​of a key, given in parameter
 ```php
 var_dump(
     $collection->extract('note')->max(),
     $collection->max('note')
+    $collection->extract('note')->min(),
+    $collection->min('note')
 );
 ```
 show info :

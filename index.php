@@ -22,8 +22,8 @@ var_dump(
 );
 
 var_dump(
-    $collection->lists('name', 'note'),
-    $collection->extract('note')
+    $collection->lists('name', 'note')->items,
+    $collection->extract('note')->items
 );
 
 var_dump(
