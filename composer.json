@@ -1,6 +1,7 @@
 {
     "name": "little-sumo-labs/collection",
     "description": "Classe PHP facilitant la Manipulation des tableaux PHP avec la POO",
+    "version": "1.0.0",
     "type": "library",
     "license": "MIT",
     "authors": [
