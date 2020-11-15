@@ -15,6 +15,8 @@ $notes = [
 ];
 
 $collection = new collection($notes);
+
+/*
 var_dump(
     $collection->get('0.name'),
     $collection->get('1')->get('name'),
@@ -46,4 +48,13 @@ var_dump(
 
 var_dump(
     $collection->take(2)
+);
+*/
+
+var_dump(
+    $collection->insert(2, [
+        'name' => 'Bob',
+        'note' => 8,
+        'nickname' => 'test4'
+    ])->items
 );

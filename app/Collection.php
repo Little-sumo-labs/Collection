@@ -104,12 +104,23 @@ class Collection implements \IteratorAggregate, \ArrayAccess {
     }
 
     /**
+     * Add an element in the current array $this->items
+     * @param string $key
+     * @param $value
+     * @return Collection
+     */
+    public function insert(string $key, $value)
+    {
+        return new Collection(array_splice($this->items, $key, 0, [$value]));
+    }
+
+    /**
      * Sorts a collection of arrays or objects by key.
      * @param string $attr
      * @param string $order
      * @return Collection
      */
-    public function orderBy($attr, $order)
+    public function orderBy(string $attr, string $order)
     {
         $sortedItems = [];
         foreach ($this->items as $item) {

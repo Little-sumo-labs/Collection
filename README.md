@@ -148,6 +148,42 @@ array (size=2)
       'nickname' => string 'test2' (length=5)
 ```
 
+#### Example 7 : functions insert()
+- Add an element in the current array
+```php
+var_dump(
+    $collection->insert(2, [
+        'name' => 'Bob',
+        'note' => 8,
+        'nickname' => 'test4'
+    ])->items
+);
+```
+show info :
+```php
+array (size=4)
+  0 => 
+    array (size=3)
+      'name' => string 'Jean' (length=4)
+      'note' => int 20
+      'nickname' => string 'test' (length=4)
+  1 => 
+    array (size=3)
+      'name' => string 'Marc' (length=4)
+      'note' => int 13
+      'nickname' => string 'test2' (length=5)
+  2 => 
+    array (size=3)
+      'name' => string 'Bob' (length=3)
+      'note' => int 8
+      'nickname' => string 'test4' (length=5)
+  3 => 
+    array (size=3)
+      'name' => string 'Emilie' (length=6)
+      'note' => int 15
+      'nickname' => string 'test3' (length=5)
+```
+
 ## Documentation & Useful links
 * [Tutoriel Vidéo PHP - Manipuler les tableaux en utilisant la POO](https://www.grafikart.fr/tutoriels/php/poo-collection-php-523)
 * [ A curated collection of useful PHP snippets that you can understand in 30 seconds or less.](https://github.com/appzcoder/30-seconds-of-php-code)
